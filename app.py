@@ -10,34 +10,40 @@ from time import mktime
 # import nltk
 from datetime import datetime
 
-@app.route('/addname/<name>/')
-def addname(name):
-    db.expense_budget_collection.insert_one({"name": name.lower()})
-    return redirect(url_for('getnames'))
+# @app.route('/addname/<name>/')
+# def addname(name):
+#     db.expense_budget_collection.insert_one({"name": name.lower()})
+#     return redirect(url_for('getnames'))
 
-@app.route('/getnames/')
-def getnames():
-    names_json = []
-    if db.expense_budget_collection.find({}):
-        for name in db.expense_budget_collection.find({}).sort("name"):
-            names_json.append({"name": name['name'], "id": str(name['_id'])})
-    return json.dumps(names_json)
+# @app.route('/getnames/')
+# def getnames():
+#     names_json = []
+#     if db.expense_budget_collection.find({}):
+#         for name in db.expense_budget_collection.find({}).sort("name"):
+#             names_json.append({"name": name['name'], "id": str(name['_id'])})
+#     return json.dumps(names_json)
 
-#test to insert data to the data base
-@app.route("/test")
-def test():
-    db.expense_budget_collection.insert_one({"name": "John"})
-    return "Connected to the data base!"
+# #test to insert data to the data base
+# @app.route("/test")
+# def test():
+#     db.expense_budget_collection.insert_one({"name": "John"})
+#     return "Connected to the data base!"
 
-@app.route("/post-selected-news-article/", methods=['GET','POST'])
-def post_selected_news_article():
-    response_object = {'status': 'success'}
-    if request.method == 'POST':
-        # print( request.get_json() )
-        for keyword in request.get_json()['keywords']:
-            print(keyword)
-            break
-    return jsonify(response_object)
+# @app.route("/post-selected-news-article/", methods=['GET','POST'])
+# def post_selected_news_article():
+#     response_object = {'status': 'success'}
+#     if request.method == 'POST':
+#         # print( request.get_json() )
+#         for keyword in request.get_json()['keywords']:
+#             print(keyword)
+#             break
+#     return jsonify(response_object)
+
+
+
+
+
+
 
 # # the real deal
 # @app.route('/getproducts/', methods=['GET'])

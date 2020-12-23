@@ -5,6 +5,7 @@ dnspython
 flask
 flask-cors
 itsdangerous
+gunicorn
 jinja2
 markupsafe
 requests
