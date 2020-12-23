@@ -7,7 +7,6 @@ flask-cors
 itsdangerous
 jinja2
 markupsafe
-python
 requests
 setuptools
 urllib3
