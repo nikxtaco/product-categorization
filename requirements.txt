@@ -7,13 +7,10 @@ flask-cors
 itsdangerous
 jinja2
 markupsafe
-openssl
-pycparser
 pymongo
 python
 requests
 setuptools
-sqlite
 urllib3
 werkzeug
 
